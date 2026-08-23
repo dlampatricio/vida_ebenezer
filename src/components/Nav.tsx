@@ -25,12 +25,13 @@ export function Nav() {
           href="#"
           aria-hidden={!scrolled}
           tabIndex={scrolled ? 0 : -1}
-          className={`font-display text-xl lg:text-2xl tracking-wide text-ink transition-all duration-300 ${
+          className={`font-display text-xl lg:text-2xl tracking-wide text-ink transition-all duration-300 flex items-center gap-2 ${
             scrolled
               ? "opacity-100 translate-y-0"
               : "opacity-0 -translate-y-1 pointer-events-none"
           }`}
         >
+          <img src="/icon.svg" alt="" className="h-7 w-7 lg:h-8 lg:w-8" />
           <span className="italic">Vida</span>
           <span className="ml-1 text-primary">Ebenezer</span>
         </a>
