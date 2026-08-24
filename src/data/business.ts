@@ -11,7 +11,7 @@ export const BUSINESS = {
   city: "Cienfuegos, Cuba",
   foundedYear: 2018,
 
-  address: "[Calle y número, Ciudad]",
+  address: "[Ave 68, entre 49 y 51 #4923, Cienfuegos]",
   email: "[correo@vidaebenezer.com]",
   phone: "[+00 000 000 0000]",
   phoneHref: "+000000000000",
