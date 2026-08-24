@@ -37,12 +37,12 @@ export function Footer() {
               </h4>
               <ul className="space-y-3">
                 {col.links.map((link) => (
-                  <li key={link}>
+                  <li key={link.label}>
                     <a
-                      href="#"
+                      href={link.href}
                       className="text-sm hover:text-taupe transition-colors duration-200"
                     >
-                      {link}
+                      {link.label}
                     </a>
                   </li>
                 ))}

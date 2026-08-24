@@ -23,7 +23,8 @@ export function Services() {
           {SERVICES.map((s) => (
             <div
               key={s.title}
-              className="group relative overflow-hidden bg-card img-hover cursor-pointer"
+              id={s.slug}
+              className="group relative overflow-hidden bg-card img-hover cursor-pointer scroll-mt-28"
             >
               <div className="relative overflow-hidden aspect-3/4">
                 <img
@@ -44,7 +45,7 @@ export function Services() {
                   {s.desc}
                 </p>
                 <div className="mt-6 flex items-center gap-2 text-primary text-sm font-medium tracking-wide group-hover:gap-4 transition-all duration-300">
-                  <span>Cotizar este servicio</span>
+                  <span>Consultar este servicio</span>
                   <span>→</span>
                 </div>
               </div>
