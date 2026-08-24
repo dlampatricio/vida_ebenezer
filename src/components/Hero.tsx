@@ -1,11 +1,11 @@
-import { BUSINESS, STATS } from "@/data/business";
+import { BUSINESS, STATS } from '@/data/business';
 
 export function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-end overflow-hidden bg-ink">
       <div className="absolute inset-0">
         <img
-          src="/hero-image.jpg"
+          src="/hero-image.webp"
           alt="Ceremonia de boda en un jardín con arco floral blanco y rosa"
           className="w-full h-full object-cover opacity-60"
           fetchPriority="high"
@@ -24,9 +24,8 @@ export function Hero() {
             <br /> ser hermoso
           </h1>
           <p className="text-champagne/80 text-lg lg:text-xl font-light leading-relaxed max-w-xl mb-10">
-            Diseñamos e instalamos experiencias de decoración, flores e
-            iluminación hechas a medida para bodas, cumpleaños y reuniones que
-            merecen ser recordadas.
+            Diseñamos e instalamos experiencias de decoración, flores e iluminación hechas a medida
+            para bodas, cumpleaños y reuniones que merecen ser recordadas.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -49,12 +48,8 @@ export function Hero() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-3 gap-6 text-center">
           {STATS.map((stat) => (
             <div key={stat.label}>
-              <div className="font-display text-2xl lg:text-3xl text-white mb-1">
-                {stat.value}
-              </div>
-              <div className="text-taupe text-xs tracking-widest uppercase">
-                {stat.label}
-              </div>
+              <div className="font-display text-2xl lg:text-3xl text-white mb-1">{stat.value}</div>
+              <div className="text-taupe text-xs tracking-widest uppercase">{stat.label}</div>
             </div>
           ))}
         </div>
