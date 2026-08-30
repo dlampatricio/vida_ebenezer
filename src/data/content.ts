@@ -55,8 +55,8 @@ export const GALLERY = [
     size: 'tall',
   },
   {
-    img: 'https://images.unsplash.com/photo-1653821355692-03666613499f?w=800&h=600&fit=crop&auto=format',
-    label: 'Recepción a la luz de las velas',
+    img: '/asian_wedding.webp',
+    label: 'Boda Asiática',
     size: 'wide',
   },
   {
