@@ -43,9 +43,9 @@ export function About() {
           </div>
 
           <div className="order-1 lg:order-2 relative">
-            <div className="relative overflow-hidden aspect-[4/5] bg-ink-soft img-hover">
+            <div className="relative overflow-hidden aspect-4/5 bg-ink-soft img-hover">
               <img
-                src="https://images.unsplash.com/photo-1769812343775-85a27e6a076c?w=800&h=1000&fit=crop&auto=format"
+                src="tropical_wedding.webp"
                 alt="Mesa de recepción elegante con centro de mesa floral"
                 className="w-full h-full object-cover opacity-90"
               />

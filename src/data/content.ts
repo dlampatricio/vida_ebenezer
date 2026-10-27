@@ -19,14 +19,14 @@ export const SERVICES = [
     slug: 'cumpleanos',
     subtitle: 'Celebraciones dignas de recordar',
     desc: 'Los cumpleaños importantes merecen escenarios extraordinarios. Diseñamos arcos de globos inmersivos, muros florales y mesas personalizadas que reflejan quiénes son ustedes.',
-    img: 'https://images.unsplash.com/photo-1755704282977-340323fa52df?w=600&h=750&fit=crop&auto=format',
+    img: '/pink_quinceanera.webp',
   },
   {
     title: 'Eventos & Galas',
     slug: 'eventos-galas',
     subtitle: 'Ocasiones corporativas y sociales',
     desc: 'Lanzamientos de producto, galas benéficas, cenas de aniversario: traducimos la identidad de la marca y la historia personal en experiencias espaciales que sus invitados no olvidarán.',
-    img: 'https://images.unsplash.com/photo-1751257567128-a90534b263e6?w=600&h=750&fit=crop&auto=format',
+    img: 'green_centerpiece.webp',
   },
 ];
 
@@ -50,33 +50,33 @@ export const MOOD_TAGS = [
 
 export const GALLERY = [
   {
-    img: 'https://images.unsplash.com/photo-1529636798458-92182e662485?w=800&h=1000&fit=crop&auto=format',
-    label: 'Novia primaveral',
+    img: 'trumpet_among_roses.webp',
+    label: 'Castillo de Rosas',
     size: 'tall',
   },
   {
-    img: '/asian_wedding.webp',
+    img: 'asian_wedding.webp',
     label: 'Boda Asiática',
     size: 'wide',
   },
   {
-    img: 'https://images.unsplash.com/photo-1676734627786-a3662ff6a243?w=800&h=600&fit=crop&auto=format',
-    label: 'Gala de etiqueta',
+    img: 'dock_wedding.webp',
+    label: 'Boda en el Muelle',
     size: 'normal',
   },
   {
-    img: 'https://images.unsplash.com/photo-1534429005880-27f51d95d8ff?w=800&h=1000&fit=crop&auto=format',
-    label: 'Arco de pétalos blancos',
+    img: 'balloon_party.webp',
+    label: 'Fiesta de Globos',
     size: 'tall',
   },
   {
-    img: 'https://images.unsplash.com/photo-1738669469820-259d9c7189bb?w=800&h=600&fit=crop&auto=format',
-    label: 'Cena íntima',
+    img: 'blush_roses.webp',
+    label: 'Ramo Rosa',
     size: 'normal',
   },
   {
-    img: 'https://images.unsplash.com/photo-1767070805821-60c701885151?w=800&h=600&fit=crop&auto=format',
-    label: 'Cumpleaños en jardín',
+    img: 'seaside_wedding.webp',
+    label: 'Boda Junto al Mar',
     size: 'wide',
   },
 ];
@@ -114,9 +114,9 @@ export const TESTIMONIALS = [
   },
   {
     quote:
-      'Para los XV años de mi hija tomaron mi tablero de Pinterest y lo convirtieron en un cuento de hadas vivo. Una ejecución absolutamente impecable.',
+      'Para los 15 años de mi hija tomaron mi tablero de Pinterest y lo convirtieron en un cuento de hadas vivo. Una ejecución absolutamente impecable.',
     name: 'Carmen Reyes',
-    event: 'XV años · Marzo 2025',
+    event: 'Quinceañera · Marzo 2025',
     img: 'https://images.unsplash.com/photo-1710587384835-0f3de33d8042?w=120&h=120&fit=crop&auto=format',
   },
   {
@@ -133,7 +133,7 @@ export const EVENT_TYPES = [
   'Cumpleaños',
   'Evento corporativo',
   'Aniversario',
-  'XV años',
+  'Quinceañera',
   'Otro',
 ];
 
@@ -147,7 +147,7 @@ export const FOOTER_COLUMNS = [
       { label: 'Cumpleaños', href: '#cumpleanos' },
       { label: 'Eventos corporativos', href: '#eventos-galas' },
       { label: 'Aniversarios', href: '#eventos-galas' },
-      { label: 'XV años', href: '#cumpleanos' },
+      { label: 'Quinceañera', href: '#cumpleanos' },
     ],
   },
   {
