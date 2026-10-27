@@ -1,4 +1,4 @@
-import { BUSINESS } from "@/data/business";
+import { BUSINESS } from '@/data/business';
 
 export function About() {
   return (
@@ -14,15 +14,13 @@ export function About() {
               <span className="italic text-taupe">los detalles.</span>
             </h2>
             <p className="text-champagne/70 text-base leading-relaxed mb-6 font-light">
-              Vida Ebenezer nació en {BUSINESS.foundedYear} con una convicción:
-              los eventos deben sentirse como entrar a otro mundo, uno
-              construido por completo alrededor de la persona que lo
-              protagoniza.
+              Vida Ebenezer nació en {BUSINESS.foundedYear} con una convicción: los eventos deben
+              sentirse como entrar a otro mundo, uno construido por completo alrededor de la persona
+              que lo protagoniza.
             </p>
             <p className="text-champagne/70 text-base leading-relaxed mb-10 font-light">
-              Hoy nuestro equipo de diseñadores, floristas e iluminadores lleva
-              esa misma convicción a cada proyecto, ya sea una boda de 300
-              invitados o una cena íntima en casa.
+              Hoy nuestro equipo de diseñadores, floristas e iluminadores lleva esa misma convicción
+              a cada proyecto, ya sea una boda de 300 invitados o una cena íntima en casa.
             </p>
             <div className="grid grid-cols-2 gap-8 pt-8 border-t border-white/10">
               <div>
@@ -32,9 +30,7 @@ export function About() {
                 </div>
               </div>
               <div>
-                <div className="font-display text-4xl text-taupe mb-2">
-                  400+
-                </div>
+                <div className="font-display text-4xl text-taupe mb-2">100+</div>
                 <div className="text-muted-fg text-xs tracking-widest uppercase">
                   Eventos realizados
                 </div>

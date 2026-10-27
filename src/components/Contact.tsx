@@ -17,17 +17,78 @@ export function Contact() {
     date: "",
     guests: "",
     name: "",
-    email: "",
+    // email: "",
     phone: "",
     message: "",
+    pinterestUrl: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [pinterestError, setPinterestError] = useState("");
 
-  const update = (field: string, value: string) =>
+  const isValidPinterestUrl = (url: string) => {
+    const trimmed = url.trim();
+    if (!trimmed) return true;
+    try {
+      const parsed = new URL(trimmed);
+      if (parsed.protocol !== "http:" && parsed.protocol !== "https:") {
+        return false;
+      }
+      const host = parsed.hostname.toLowerCase();
+      if (host === "pinterest.com" || host.endsWith(".pinterest.com")) {
+        return true;
+      }
+      if (host === "pin.it") return true;
+      return false;
+    } catch {
+      return false;
+    }
+  };
+
+  const update = (field: string, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
+    if (field === "pinterestUrl") {
+      setPinterestError("");
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (form.pinterestUrl.trim() && !isValidPinterestUrl(form.pinterestUrl)) {
+      setPinterestError(
+        "Introduce un enlace válido de Pinterest (pinterest.com o pin.it). Debe empezar con http:// o https://.",
+      );
+      setStep(2);
+      return;
+    }
+
+    const getWaNumber = () => {
+      const raw = (BUSINESS.phoneHref || BUSINESS.phone || "").replace(/[^0-9]/g, "");
+      if (raw) return raw;
+      return "";
+    };
+
+    const waNumber = getWaNumber();
+    if (waNumber) {
+      const lines = [
+        `*Solicitud de cotización - ${BUSINESS.name}*`,
+        ``,
+        `*Tipo de evento:* ${form.eventType || "-"}`,
+        `*Fecha:* ${form.date || "-"}`,
+        `*Invitados estimados:* ${form.guests || "-"}`,
+        `*Nombre:* ${form.name || "-"}`,
+        // `*Correo:* ${form.email || "-"}`,
+        `*Teléfono:* ${form.phone || "-"}`,
+        `*Tablero de Pinterest:* ${form.pinterestUrl.trim() || "-"}`,
+        ``,
+        `*Notas adicionales:*`,
+        form.message || "-",
+      ];
+      const text = lines.join("\n");
+      const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+
     setSubmitted(true);
   };
 
@@ -50,7 +111,7 @@ export function Contact() {
             <div className="space-y-5">
               {[
                 ["Estudio", BUSINESS.address],
-                ["Correo", BUSINESS.email],
+                // ["Correo", BUSINESS.email],
                 ["Teléfono", BUSINESS.phone],
                 ["Horario", BUSINESS.hours],
               ].map(([label, value]) => (
@@ -78,7 +139,7 @@ export function Contact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
-                <div className="flex items-center gap-4 mb-8">
+                <div className="flex items-center gap-2 sm:gap-4 mb-8 flex-wrap">
                   {([1, 2, 3] as FormStep[]).map((s) => (
                     <div key={s} className="flex items-center gap-2">
                       <div
@@ -92,14 +153,14 @@ export function Contact() {
                       </div>
                       {s < 3 && (
                         <div
-                          className={`w-12 h-px transition-colors duration-300 ${
+                          className={`w-8 sm:w-12 h-px transition-colors duration-300 ${
                             step > s ? "bg-primary" : "bg-border"
                           }`}
                         />
                       )}
                     </div>
                   ))}
-                  <div className="ml-2 text-muted-fg text-xs tracking-widest uppercase">
+                  <div className="ml-1 sm:ml-2 text-muted-fg text-[10px] sm:text-xs tracking-widest uppercase">
                     {STEP_LABELS[step]}
                   </div>
                 </div>
@@ -191,6 +252,30 @@ export function Contact() {
                         className="w-full border border-border bg-white px-4 py-3 text-sm text-ink placeholder-taupe focus:outline-none focus:border-primary transition-colors resize-none"
                       />
                     </div>
+                    <div>
+                      <label
+                        htmlFor="pinterest"
+                        className="block text-xs tracking-widest uppercase text-muted-fg mb-2"
+                      >
+                        Tablero de Pinterest (opcional)
+                      </label>
+                      <input
+                        id="pinterest"
+                        type="url"
+                        value={form.pinterestUrl}
+                        onChange={(e) => update("pinterestUrl", e.target.value)}
+                        placeholder="https://es.pinterest.com/usuario/nombre-tablero/"
+                        className={`w-full border bg-white px-4 py-3 text-sm text-ink placeholder-taupe focus:outline-none focus:border-primary transition-colors ${
+                          pinterestError ? "border-red-500" : "border-border"
+                        }`}
+                      />
+                      <p className="text-xs text-muted-fg mt-1">
+                        Pega el enlace completo de tu tablero o pin.
+                      </p>
+                      {pinterestError && (
+                        <p className="text-xs text-red-600 mt-1">{pinterestError}</p>
+                      )}
+                    </div>
                     <div className="flex gap-3">
                       <button
                         type="button"
@@ -232,7 +317,7 @@ export function Contact() {
                         required
                       />
                     </div>
-                    <div>
+                    {/* <div>
                       <label
                         htmlFor="email"
                         className="block text-xs tracking-widest uppercase text-muted-fg mb-2"
@@ -248,7 +333,7 @@ export function Contact() {
                         className="w-full border border-border bg-white px-4 py-3 text-sm text-ink placeholder-taupe focus:outline-none focus:border-primary transition-colors"
                         required
                       />
-                    </div>
+                    </div> */}
                     <div>
                       <label
                         htmlFor="phone"

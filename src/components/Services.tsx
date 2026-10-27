@@ -21,10 +21,12 @@ export function Services() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {SERVICES.map((s) => (
-            <div
+            <a
               key={s.title}
+              href="#contacto"
               id={s.slug}
-              className="group relative overflow-hidden bg-card img-hover cursor-pointer scroll-mt-28"
+              className="group relative overflow-hidden bg-card img-hover cursor-pointer scroll-mt-28 block"
+              aria-label={`Consultar ${s.title}`}
             >
               <div className="relative overflow-hidden aspect-3/4">
                 <img
@@ -49,7 +51,7 @@ export function Services() {
                   <span>→</span>
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

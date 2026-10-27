@@ -1,5 +1,5 @@
-import { BUSINESS } from "@/data/business";
-import { FOOTER_COLUMNS } from "@/data/content";
+import { BUSINESS } from '@/data/business';
+import { FOOTER_COLUMNS } from '@/data/content';
 
 export function Footer() {
   return (
@@ -12,16 +12,16 @@ export function Footer() {
               <span className="text-primary ml-1">Ebenezer</span>
             </div>
             <p className="text-sm leading-relaxed max-w-xs font-light mb-6">
-              Decoración de eventos a medida para bodas, cumpleaños y todos los
-              momentos que vale la pena celebrar. Con base en {BUSINESS.city}.
+              Decoración de eventos a medida para bodas, cumpleaños y todos los momentos que vale la
+              pena celebrar. Con base en {BUSINESS.city}.
             </p>
             <div className="flex flex-col gap-1.5 text-sm">
-              <a
+              {/* <a
                 href={`mailto:${BUSINESS.email}`}
                 className="hover:text-taupe transition-colors duration-200 w-fit"
               >
                 {BUSINESS.email}
-              </a>
+              </a> */}
               <a
                 href={`tel:${BUSINESS.phoneHref}`}
                 className="hover:text-taupe transition-colors duration-200 w-fit"
@@ -32,9 +32,7 @@ export function Footer() {
           </div>
           {FOOTER_COLUMNS.map((col) => (
             <div key={col.title}>
-              <h4 className="text-ivory text-xs tracking-widest uppercase mb-5">
-                {col.title}
-              </h4>
+              <h4 className="text-ivory text-xs tracking-widest uppercase mb-5">{col.title}</h4>
               <ul className="space-y-3">
                 {col.links.map((link) => (
                   <li key={link.label}>
@@ -52,12 +50,21 @@ export function Footer() {
         </div>
         <div className="border-t border-white/10 pt-8 flex flex-col lg:flex-row items-center justify-between gap-4">
           <p className="text-xs tracking-wide">
-            © {new Date().getFullYear()} {BUSINESS.name}. Todos los derechos
-            reservados.
+            © {new Date().getFullYear()} {BUSINESS.name}. Todos los derechos reservados.
           </p>
-          <p className="text-xs italic font-display text-taupe/60">
-            Haciendo momentos inolvidables, un evento a la vez.
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center">
+            <p className="text-xs tracking-wide">
+              Design and Dev by{' '}
+              <a
+                href="https://dlampatricio.github.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-taupe transition-colors underline"
+              >
+                David Lam
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
